@@ -1,5 +1,9 @@
 def remove_duplicates(array):
-    return 0
+    pattern = []
+    for angka in array:
+        if angka not in pattern:
+            pattern.append(angka)
+    return len(pattern)
 
 if __name__ == "__main__":
     print(remove_duplicates([2, 3, 3, 3, 6, 9, 9]))  # 4

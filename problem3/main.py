@@ -1,5 +1,11 @@
+chache = {0: 0, 1: 1}
+
 def fibonacci(number):
-    return 0
+    if number in chache:
+        return chache[number]
+    else:
+        chache[number] = fibonacci(number-1)+fibonacci(number-2)
+        return chache[number]
 
 if __name__ == "__main__":
     print(fibonacci(0))  # 0
