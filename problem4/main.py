@@ -9,13 +9,16 @@ def is_prime (number):
 def generate_primes_grid(width, height, start):
     inc = start + 1
     result = ""
+    prime_widht = 2
+
     for x in range (height):
         for y in range (width):
             while not is_prime(inc):
                 inc += 1
-            result += str(inc) + " "
+            result += str(inc).rjust(prime_widht) + " "
             inc += 1   
-        result = result.rstrip() + "\n"     
+        result = result.strip() + "\n"     
+        
     return result
 
 if __name__ == "__main__":
